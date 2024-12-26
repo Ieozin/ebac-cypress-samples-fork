@@ -2,20 +2,20 @@ pipeline {
     agent any
 
     stages {
-        stage('Clonar o Repositorio') {
+        stage('Clonar o Repositório') {
             steps {
-                git branch : 'main', url: 'https://github.com/Ieozin/ebac-cypress-samples-fork.git'
+                git(branch: 'main', url: 'https://github.com/Ieozin/ebac-cypress-samples-fork.git')
             }
         }
-        stage('Instalar Dependencias') {
-            setps {
+        stage('Instalar Dependências') {
+            steps {
                 sh 'npm install'
             }
         }
-        stage('Executar testes') {
+        stage('Executar Testes') {
             steps {
                 sh 'NO_COLOR=1 npm run cy:run'
             }
         }
-    }   
+    }
 }
