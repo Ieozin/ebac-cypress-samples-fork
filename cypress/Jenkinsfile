@@ -4,11 +4,7 @@ pipeline {
     stages {
         stage('Clonar o Repositório') {
             steps {
-<<<<<<< HEAD
                 git(branch: 'main', url: 'https://github.com/Ieozin/ebac-cypress-samples-fork.git')
-=======
-                git branch : 'main', url: 'https://github.com/Ieozin/ebac-cypress-samples-fork.git'
->>>>>>> ba504fc54130701e6b87b2e0a0d0ed5deef6f9f4
             }
         }
         stage('Instalar Dependências') {
